@@ -1,0 +1,27 @@
+read_verilog sub_bytes_design.v
+read_verilog shift_rows_design.v
+read_verilog mixcols_design.v
+read_verilog addroundkey.v
+read_verilog sbox.v
+read_verilog key_expansion_design.v 
+read_verilog aes_top_design.v
+
+hierarchy -check -top AesFsm
+
+proc
+opt
+fsm
+opt
+memory
+opt
+
+techmap
+opt
+
+dfflibmap -liberty /home/surya-gs/Surya/Technology_PDKs/NangateOpenCellLibrary_typical.lib
+abc -liberty /home/surya-gs/Surya/Technology_PDKs/NangateOpenCellLibrary_typical.lib
+
+clean
+stat
+show -format pdf -prefix AesFsm
+write_verilog aes_synth.v
