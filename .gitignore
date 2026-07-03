@@ -1,0 +1,27 @@
+# Vim
+*.swp
+*.swo
+*.swn
+*~
+
+# GTKWave
+*.vcd
+*.gtkw
+
+# Generated synthesis files
+*.dot
+*.svg
+*.png
+*.pdf
+aes_synth.v
+
+# Logs
+*.log
+
+# VS Code
+.vscode/
+
+# Quartus
+db/
+incremental_db/
+output_files/
